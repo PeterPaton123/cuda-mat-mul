@@ -87,7 +87,7 @@ int main() {
 
   MatMul<<<blockSize, threadSize>>>(d_mat_a, d_mat_b, d_mat_c, rows_a, cols_b, cols_a);
   
-  // Output vector on device memory
+  // Output vector on host memory
   int *h_mat_c = new int[rows_a * cols_b];
 
   if (cudaMemcpy(h_mat_c, d_mat_c, sizeof(int) * rows_a * cols_b, cudaMemcpyDeviceToHost) != cudaSuccess) {
