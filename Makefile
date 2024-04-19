@@ -7,7 +7,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 TARGET = out/main
 
-CPP_SOURCES = $(SRC_DIR)/main.cpp $(SRC_DIR)/matrix.cpp
+CPP_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 CU_SOURCES = $(SRC_DIR)/matmul.cu
 CPP_OBJECTS = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(CPP_SOURCES))
 CU_OBJECTS = $(patsubst $(SRC_DIR)/%.cu,$(OBJ_DIR)/%.o,$(CU_SOURCES))
